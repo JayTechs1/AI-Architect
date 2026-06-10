@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/*
+  AI Architect — design tokens.
+  A dark, precise, "drafting table at night" aesthetic with an amber accent.
+*/
+:root {
+  --background: #0a0b0f;
+  --surface: #121420;
+  --surface-2: #1a1d2e;
+  --border: #262a3d;
+  --foreground: #e8eaf2;
+  --muted: #8a90a6;
+  --accent: #f0a830;
+  --accent-soft: #f5c66b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle blueprint grid used on hero / empty states. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(240, 168, 48, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 168, 48, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glow-accent {
+  box-shadow: 0 0 40px -8px rgba(240, 168, 48, 0.45);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #343954;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}

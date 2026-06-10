@@ -1,0 +1,36 @@
+// AI Architect — database schema
+// SQLite for a fully self-contained local stack. Swap the provider/url
+// to Postgres later without touching application code.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String?
+  password  String // bcrypt hash
+  createdAt DateTime  @default(now())
+  projects  Project[]
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  // The full floor-plan document is stored as JSON (walls, rooms, etc.).
+  // Stringified because SQLite has no native JSON type.
+  data        String   @default("{\"walls\":[],\"rooms\":[]}")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  owner       User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ownerId     String
+
+  @@index([ownerId])
+}
