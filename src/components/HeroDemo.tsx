@@ -15,7 +15,7 @@ const Scene3D = dynamic(() => import("./editor/Scene3D"), {
 export default function HeroDemo() {
   return (
     <div className="h-full w-full">
-      <Scene3D plan={SAMPLE_PLAN} light />
+      <Scene3D plan={SAMPLE_PLAN} light autoRotate />
     </div>
   );
 }

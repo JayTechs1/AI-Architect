@@ -91,9 +91,11 @@ function Building({ plan }: { plan: FloorPlan }) {
 export default function Scene3D({
   plan,
   light = false,
+  autoRotate = false,
 }: {
   plan: FloorPlan;
   light?: boolean;
+  autoRotate?: boolean;
 }) {
   const isEmpty = plan.walls.length === 0 && plan.rooms.length === 0;
   const bg = light ? "#eef0f3" : "#0a0b0f";
@@ -149,6 +151,8 @@ export default function Scene3D({
         <OrbitControls
           makeDefault
           enableDamping
+          autoRotate={autoRotate}
+          autoRotateSpeed={0.8}
           minDistance={3}
           maxDistance={45}
           maxPolarAngle={Math.PI / 2.05}

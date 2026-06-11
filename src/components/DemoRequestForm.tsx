@@ -94,7 +94,7 @@ export default function DemoRequestForm() {
           <select
             value={form.role}
             onChange={(e) => set("role")(e.target.value)}
-            className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900"
+            className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
           >
             {ROLES.map((r) => (
               <option key={r}>{r}</option>
@@ -112,7 +112,7 @@ export default function DemoRequestForm() {
           onChange={(e) => set("message")(e.target.value)}
           rows={3}
           placeholder="Tell us a little about your projects…"
-          className="w-full resize-none rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900"
+          className="w-full resize-none rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
         />
       </label>
 
@@ -125,7 +125,7 @@ export default function DemoRequestForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-5 w-full rounded-lg bg-neutral-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-neutral-700 disabled:opacity-60"
+        className="bg-brand-gradient mt-5 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:opacity-95 disabled:opacity-60"
       >
         {loading ? "Sending…" : "Request a demo"}
       </button>
@@ -162,7 +162,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900"
+        className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
       />
     </label>
   );
