@@ -88,8 +88,15 @@ function Building({ plan }: { plan: FloorPlan }) {
   );
 }
 
-export default function Scene3D({ plan }: { plan: FloorPlan }) {
+export default function Scene3D({
+  plan,
+  light = false,
+}: {
+  plan: FloorPlan;
+  light?: boolean;
+}) {
   const isEmpty = plan.walls.length === 0 && plan.rooms.length === 0;
+  const bg = light ? "#eef0f3" : "#0a0b0f";
 
   return (
     <div className="relative h-full w-full">
@@ -99,10 +106,10 @@ export default function Scene3D({ plan }: { plan: FloorPlan }) {
         camera={{ position: [8, 7, 10], fov: 45 }}
         gl={{ antialias: true }}
       >
-        <color attach="background" args={["#0a0b0f"]} />
-        <fog attach="fog" args={["#0a0b0f", 25, 70]} />
+        <color attach="background" args={[bg]} />
+        <fog attach="fog" args={[bg, 30, 75]} />
 
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={light ? 0.8 : 0.5} />
         <directionalLight
           position={[10, 18, 8]}
           intensity={1.6}
@@ -121,10 +128,10 @@ export default function Scene3D({ plan }: { plan: FloorPlan }) {
           args={[60, 60]}
           cellSize={1}
           cellThickness={0.5}
-          cellColor="#1f2335"
+          cellColor={light ? "#d3d6dd" : "#1f2335"}
           sectionSize={5}
           sectionThickness={1}
-          sectionColor="#2c3150"
+          sectionColor={light ? "#b9bdc8" : "#2c3150"}
           fadeDistance={45}
           fadeStrength={1}
           infiniteGrid

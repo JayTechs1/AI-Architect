@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Architect — Design, render & share buildings",
+  title: "ARCH-AI — Design, render & build",
   description:
-    "A platform for architects and builders to draft floor plans and explore them as live 3D models. Sign in to save your projects.",
+    "The private design platform for architects and builders. Draft floor plans, render live 3D models, and access every project from any device. Request a demo.",
 };
 
 export default function RootLayout({

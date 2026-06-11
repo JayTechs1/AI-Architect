@@ -150,7 +150,7 @@ export default function ProjectEditor({
       <footer className="flex items-center gap-4 border-t border-border bg-surface px-4 py-1.5 text-xs text-muted">
         <span>{wallCount} walls</span>
         <span>{totalLength.toFixed(1)} m total</span>
-        <span className="ml-auto font-mono opacity-60">AI Architect</span>
+        <span className="ml-auto font-mono opacity-60">ARCH-AI</span>
       </footer>
     </div>
   );

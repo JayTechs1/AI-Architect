@@ -50,7 +50,8 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
           href="/"
           className="inline-flex items-center gap-2 text-lg font-semibold tracking-tight"
         >
-          <span className="text-accent">◢</span> AI Architect
+          <span className="text-accent">◢</span> ARCH
+          <span className="text-muted">-</span>AI
         </Link>
         <h1 className="mt-6 text-2xl font-semibold">
           {isSignup ? "Create your account" : "Welcome back"}
@@ -121,9 +122,9 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
           </>
         ) : (
           <>
-            New here?{" "}
-            <Link href="/signup" className="text-accent hover:underline">
-              Create an account
+            Don&apos;t have access yet?{" "}
+            <Link href="/#demo" className="text-accent hover:underline">
+              Request a demo
             </Link>
           </>
         )}

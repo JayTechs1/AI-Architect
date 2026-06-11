@@ -1,4 +1,4 @@
-// AI Architect — database schema
+// ARCH-AI — database schema
 // SQLite for a fully self-contained local stack. Swap the provider/url
 // to Postgres later without touching application code.
 
@@ -33,4 +33,19 @@ model Project {
   ownerId     String
 
   @@index([ownerId])
+}
+
+// A prospect requesting a demo from the marketing site. These are sales
+// leads — an admin reviews them and sends an invite to create an account.
+model DemoRequest {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  role      String? // e.g. Architect, Builder, Developer
+  message   String?
+  status    String   @default("new") // new | contacted | invited | closed
+  createdAt DateTime @default(now())
+
+  @@index([email])
 }

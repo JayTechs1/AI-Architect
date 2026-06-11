@@ -47,7 +47,8 @@ export default function DashboardClient({
       <header className="border-b border-border bg-surface/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center px-6 py-4">
           <span className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="text-accent">◢</span> AI Architect
+            <span className="text-accent">◢</span> ARCH
+            <span className="text-muted">-</span>AI
           </span>
           <div className="ml-auto flex items-center gap-4">
             <span className="hidden text-sm text-muted sm:inline">
