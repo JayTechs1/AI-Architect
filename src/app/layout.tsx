@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Inter, JetBrains_Mono } from "next/font/google";
+import { Sora, Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 // Sora — modern geometric display face for big, confident headlines.
@@ -20,6 +20,15 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+// Playfair Display (italic) — serif accent for the spotlight hero wordmark
+// and headline, per the hero spec.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: ["400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: "ARCH-AI — Design, render & build",
   description:
@@ -34,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>
