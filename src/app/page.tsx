@@ -4,8 +4,8 @@ import HeroDemo from "@/components/HeroDemo";
 import DemoRequestForm from "@/components/DemoRequestForm";
 
 const Wordmark = ({ className = "" }: { className?: string }) => (
-  <span className={`flex items-center gap-2 font-semibold tracking-tight ${className}`}>
-    <span className="bg-brand-gradient grid h-6 w-6 place-items-center rounded-md text-xs text-white">
+  <span className={`flex items-center gap-2 text-lg font-bold tracking-tight ${className}`}>
+    <span className="bg-brand-gradient grid h-7 w-7 place-items-center rounded-lg text-sm text-white shadow-sm shadow-cyan-500/30">
       ◢
     </span>
     <span>
@@ -73,18 +73,18 @@ export default async function Home() {
 
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-16 lg:grid-cols-2">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-600 shadow-sm backdrop-blur">
-              <span className="live-dot h-1.5 w-1.5 rounded-full bg-teal-500" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-neutral-600 shadow-sm backdrop-blur">
+              <span className="live-dot h-2 w-2 rounded-full bg-teal-500" />
               Live design studio for architects &amp; builders
             </span>
-            <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
               From floor plan to{" "}
               <span className="text-gradient bg-brand-gradient-animated bg-clip-text text-transparent">
                 living 3D
               </span>
               , in one workspace.
             </h1>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-neutral-500">
+            <p className="mt-6 max-w-md text-xl leading-relaxed text-neutral-500">
               ARCH-AI is the private design platform we deploy for your firm.
               Draft plans, render walk-through models, and access every project
               securely from any device — laptop, office, or site.
@@ -147,10 +147,10 @@ export default async function Home() {
       {/* Differentiators */}
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
             Not another <span className="text-gradient">floor-plan app.</span>
           </h2>
-          <p className="mt-4 text-lg text-neutral-500">
+          <p className="mt-5 text-xl text-neutral-500">
             Most tools force you to pick: easy or powerful, 2D or 3D, solo or
             team. ARCH-AI is built to accommodate everyone, on every project.
           </p>
@@ -195,8 +195,8 @@ export default async function Home() {
               <span className="text-gradient font-mono text-sm font-semibold">
                 {f.k}
               </span>
-              <h3 className="mt-3 text-base font-semibold">{f.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-500">
+              <h3 className="mt-3 text-lg font-bold">{f.t}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-neutral-500">
                 {f.d}
               </p>
             </div>
@@ -211,10 +211,10 @@ export default async function Home() {
       >
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               See ARCH-AI <span className="text-gradient">on your projects.</span>
             </h2>
-            <p className="mt-4 text-lg text-neutral-500">
+            <p className="mt-5 text-xl text-neutral-500">
               Tell us a little about your firm and we&apos;ll set up a private
               walkthrough. Approved teams get an email invite to sign in — with
               Google or your work email — and start designing right away.
