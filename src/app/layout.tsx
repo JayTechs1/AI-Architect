@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Sora, Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import {
+  Sora,
+  Inter,
+  JetBrains_Mono,
+  Playfair_Display,
+  Instrument_Serif,
+  Barlow,
+} from "next/font/google";
 import "./globals.css";
 
 // Sora — modern geometric display face for big, confident headlines.
@@ -29,6 +36,21 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600"],
 });
 
+// Instrument Serif (italic) + Barlow — the liquid-glass landing sections'
+// heading/body pairing.
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+
+const barlow = Barlow({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: "ARCH-AI — Design, render & build",
   description:
@@ -43,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${display.variable} ${sans.variable} ${mono.variable} ${playfair.variable} antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} ${playfair.variable} ${instrument.variable} ${barlow.variable} antialiased`}
       >
         {children}
       </body>
