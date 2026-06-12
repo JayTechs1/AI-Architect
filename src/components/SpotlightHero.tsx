@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 
-// Hero imagery (self-hosted in /public): the same building as a framing
-// blueprint (base) and the finished photoreal build (revealed in the
-// cursor spotlight).
-const BG_IMAGE_1 = "/hero-frame.png";
-const BG_IMAGE_2 = "/hero-built.png";
+// Hero imagery (self-hosted in /public): the finished photoreal build sits
+// on top as the base; the cursor spotlight acts like an X-ray, revealing the
+// framing blueprint (the building's "skeleton") underneath.
+const BG_IMAGE_1 = "/hero-built.png";
+const BG_IMAGE_2 = "/hero-frame.png";
 
 const SPOTLIGHT_R = 260;
 
@@ -190,13 +190,13 @@ export default function SpotlightHero() {
               className="block font-playfair italic font-normal text-5xl sm:text-7xl md:text-8xl hero-anim hero-reveal"
               style={{ letterSpacing: "-0.05em", animationDelay: "0.25s" }}
             >
-              Every plan holds
+              See through
             </span>
             <span
               className="block font-normal text-5xl sm:text-7xl md:text-8xl -mt-1 hero-anim hero-reveal"
               style={{ letterSpacing: "-0.08em", animationDelay: "0.42s" }}
             >
-              a finished build
+              every build
             </span>
           </h1>
         </div>
@@ -207,9 +207,9 @@ export default function SpotlightHero() {
           style={{ animationDelay: "0.7s" }}
         >
           <p className="text-sm text-white/80 leading-relaxed">
-            Every project starts as a drawing. ARCH-AI turns plans into
-            photoreal, walk-through models your whole team can explore — long
-            before ground breaks.
+            Behind every finished render is a real, buildable structure.
+            ARCH-AI keeps the design and the framing in sync — so what you
+            present is what gets built.
           </p>
         </div>
 
@@ -219,8 +219,8 @@ export default function SpotlightHero() {
           style={{ animationDelay: "0.85s" }}
         >
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-            Move your light across the page to see the frame become the finished
-            home. Design, render and share every project from one secure
+            Move your light across the page to X-ray the home down to its
+            frame. Design, render and share every project from one secure
             workspace — on any device.
           </p>
           <Link
